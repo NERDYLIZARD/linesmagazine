@@ -1,0 +1,124 @@
+/*------------------------------
+                HOME
+  -----------------------------*/
+
+
+
+/*---------- HERO ----------*/
+.carousel
+  background-image: url('../images/hans-vivek-249071.jpg')
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  padding: 25% 0
+
+/*---------- RECENT POSTS ----------*/
+#recent-posts
+  padding: 3em 0
+
+
+/*---------- NEWSLETTER ----------*/
+#newsletter
+  padding: 8em 0
+
+  .container
+    max-width: 85%
+
+  h1
+    font-size: 3.75rem
+    line-height: 1.3
+
+  .signup-form
+    input, .button
+      font-size: .9rem
+      padding: 1.25em 0 1.25em
+
+    input
+      color: $primary
+      border: 1px solid $grey_border
+      background-color: transparent
+      border-radius: 3px
+      padding-left: 1.25em
+      margin: 1em 0
+
+    button
+      text-transform: uppercase
+
+  .newsletter-description
+    font-size: .85rem
+    margin-top: .5em
+    color: $secondary
+    a
+      color: $secondary
+
+
+/*---------- MAGAZINE ----------*/
+#latest-magazine
+  padding: 3em 0
+
+
+
+
+/*------------------------------
+            Responsive
+  -----------------------------*/
+
+//Extra small < 576px
+//Small       ≥ 576px
+//Medium      ≥ 768px
+//Large       ≥ 992px
+//Extra large ≥ 1200px
+
+// col-lg
+@media (max-width: $lg)
+  /*---------- NEWSLETTER ----------*/
+  #newsletter
+
+    .container
+      max-width: 90%
+
+    h1
+      font-size: 3rem
+
+    .signup-form
+      input, .button
+        font-size: .8rem
+
+    .newsletter-description
+      font-size: .75rem
+
+
+// col-md
+@media (max-width: $md)
+  /*---------- NEWSLETTER ----------*/
+  #newsletter
+    padding: 3em 0
+    text-align: center
+
+    .container
+      max-width: 60%
+
+    h1
+      font-size: 2.5rem
+      margin-bottom: .5em
+
+    .signup-form
+      input, .button
+        font-size: .65rem
+
+
+// col-sm
+@media (max-width: $sm)
+
+  /*---------- NEWSLETTER ----------*/
+  #newsletter
+    .container
+      max-width: 80%
+
+    h1
+      font-size: 2rem
+
+    .newsletter-description
+      font-size: .65rem
+
+

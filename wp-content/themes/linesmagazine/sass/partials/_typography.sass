@@ -1,0 +1,40 @@
+html, body
+  font-family: $base_font
+  word-wrap: break-word
+  font-smoothing: antialiased
+  -webkit-font-smoothing: antialiased
+
+h1, h2, h3, h4, h5, h6
+  line-height: 1.1
+
+
+/*---------- DATE ----------*/
+.date, .date-prefix-dash
+  font-size: .8rem
+  font-weight: 400
+  color: $secondary
+
+.date-prefix-dash
+  &:before
+    content: '-'
+    padding: 0 .5em
+
+
+// alignments
+.text-center
+  text-align: center
+
+.text-right
+  text-align: right
+
+.text-left
+  text-align: left
+
+
+// Modifiers
+.text-uppercase
+  text-transform: uppercase
+
+
+.no-line-height
+  line-height: 1em !important

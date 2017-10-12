@@ -1,0 +1,32 @@
+
+/*---------- list ----------*/
+
+ul
+  list-style: none
+  padding: 0
+
+
+// apply to <li> tag
+.list-prefix-caret
+  // & === <li>
+  &
+    padding-left: 1em
+
+  // caret ">"
+  &:before
+    content: ""
+    border-color: transparent $primary
+    border-style: solid
+    border-width: 0.35em 0 0.35em 0.45em
+    display: block
+    height: 0
+    width: 0
+    left: -1em
+    top: 0.9em
+    position: relative
+    transition: all 0.15s linear
+
+
+.list-prefix-caret.rotate
+  &:before
+    transform: rotate(90deg)

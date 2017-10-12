@@ -1,0 +1,47 @@
+/*---------- POSTS----------*/
+.post
+  .post-info
+    position: relative
+    padding: 2em 1.25em
+
+    .post-category, .post-author, .post-author-prefix
+      font-size: .8rem
+      font-weight: 400
+      text-align: center
+
+    .post-category
+      position: absolute
+      top: 0
+      left: 50%
+      transform: translateX(-50%) translateY(-50%)
+      padding: .5em
+      border-radius: 3px
+      text-transform: uppercase
+      color: $white
+      background-color: rgba($primary, .9)
+
+      &:hover
+        background-color: $primary
+
+    .post-author, .post-author-prefix
+      color: $secondary
+      margin: 0
+
+    .post-author-prefix
+      &:before
+        color: $primary
+        content: 'Author - '
+
+
+    .post-title
+      font-size: 1.35rem
+      font-weight: 400
+      line-height: 1.15
+      margin: .9em 0 .3em
+
+    .post-excerpt
+      font-size: .9rem
+      color: $secondary
+      font-weight: 400
+      line-height: 1.25
+      margin: 0

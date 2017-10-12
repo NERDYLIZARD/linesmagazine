@@ -1,0 +1,65 @@
+/*------------------------------
+                MAGAZINES
+  -----------------------------*/
+
+#magazine
+  margin-bottom: 3em
+
+  .feature-magazine
+    width: 70%
+    padding: 3em 0
+    margin: 0 auto
+
+    .magazine-info
+      text-align: center
+      .issue
+        font-size: 8rem
+        font-weight: 300
+        letter-spacing: .05em
+
+  .magazine
+    margin-bottom: 2em
+
+
+
+/*------------------------------
+            Responsive
+  -----------------------------*/
+
+//Extra small < 576px
+//Small       ≥ 576px
+//Medium      ≥ 768px
+//Large       ≥ 992px
+//Extra large ≥ 1200px
+
+// col-lg
+@media (max-width: $lg)
+  //MAGAZINES Page
+  #magazine
+    .feature-magazine
+      .magazine-info
+        .issue
+          font-size: 5rem
+
+
+// col-md
+@media (max-width: $md)
+  //magazine page
+  #magazine
+    .feature-magazine
+      .magazine-info
+        .issue
+          font-size: 3rem
+
+
+// col-sm
+@media (max-width: $sm)
+  // MAGAZINES Page
+  #magazine
+    .feature-magazine
+      display: none
+
+    .filter
+      text-align: center
+      //margin: 1.5em 0
+

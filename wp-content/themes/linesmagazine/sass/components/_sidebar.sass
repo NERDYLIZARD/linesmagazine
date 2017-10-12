@@ -1,0 +1,40 @@
+// sidebar
+.sidebar
+
+  .sidebar-item
+    margin-bottom: 3em
+
+  li
+    line-height: 1.1
+
+  ul li p
+    margin-bottom: .8em
+    &:first-child
+      margin-top: .8em
+
+  // recent posts
+  .recent-posts
+    ul
+      padding-top: .025em
+
+  // post archives
+  .post-archives
+    .year-archives, .month-archives
+      font-weight: 600
+      cursor: pointer
+      user-select: none
+
+    .year-archives ul, .month-archives ul
+      font-weight: 400
+      display: none
+
+    .month-archives ul
+    //padding-top: .8em
+
+    .post-count
+      font-size: .8rem
+      color: $secondary
+      margin-left: .5em
+      letter-spacing: .125em
+      &:hover
+        color: $primary

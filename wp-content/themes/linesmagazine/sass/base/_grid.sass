@@ -1,0 +1,68 @@
+/*---------- grid system ----------*/
+.container
+  width: 1440px
+  max-width: 90%
+  margin: 0 auto
+  padding: 0
+
+// flex
+.flex
+  display: flex
+
+// add as .col(bootstrap) because card can't have .col
+.row-card
+  padding-left: 15px
+  padding-right: 15px
+
+// card
+.card
+  width: 31.5%
+  margin: 0 1.35% 2.5em
+  border-radius: 3px
+
+  // remove edges' margin
+  &:nth-child(3n-2)
+    margin-left: 0
+
+  &:nth-child(3n)
+    margin-right: 0
+
+
+
+/*------------------------------
+            Responsive
+  -----------------------------*/
+
+//Extra small < 576px
+//Small       ≥ 576px
+//Medium      ≥ 768px
+//Large       ≥ 992px
+//Extra large ≥ 1200px
+
+// col-lg
+@media (max-width: $md)
+  /*---------- grid system ----------*/
+  .card
+    width: 48%
+
+    // reset larger resolution setup
+    &:nth-child(odd), &:nth-child(even)
+      margin: 0 2% 2em
+
+    // remove edges' margin
+    &:nth-child(odd)
+      margin-left: 0
+    &:nth-child(even)
+      margin-right: 0
+
+
+
+// col-sm
+@media (max-width: $sm)
+  /*---------- grid system ----------*/
+  .card
+    width: 100%
+
+    // reset larger resolution setup
+    &:nth-child(odd), &:nth-child(even)
+      margin: 0 0 2em

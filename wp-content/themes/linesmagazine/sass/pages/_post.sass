@@ -1,0 +1,211 @@
+/*------------------------------
+                POST
+  -----------------------------*/
+.feature-area
+  margin-bottom: 2em
+
+  .image-feature
+    padding: 25% 0
+
+  // applying the style only when the post has the feature image
+  .feature-image + .post-info
+    position: relative
+    margin-top: -70px
+
+  // posts without feature image
+  .post-info
+    text-align: center
+
+    .date-wrapper
+      width: 135px
+      height: 135px
+      margin: 0 auto 3em
+      border-radius: 100%
+      //background-color: rgba($highlight, .8)
+      background-color: rgba($primary, .8)
+
+      .date
+        color: $white
+        span
+          display: block
+          letter-spacing: .07em
+          line-height: 120%
+
+        .month
+          font-size: 15px
+          padding-top: 26px
+          text-transform: uppercase
+        .day
+          font-size: 45px
+        .year
+          font-size: 15px
+
+    .post-title
+      font-size: 1.75rem
+      font-weight: 400
+      margin-bottom: .5em
+      padding: 0 5em
+
+    .breadcrumb
+      font-size: .75rem
+      font-weight: 400
+      color: $secondary
+      text-transform: uppercase
+
+    .post-meta
+      color: $primary
+
+      .post-category, .post-comment
+        font-size: .9rem
+
+      //.post-category
+      //  &:after
+      //    display: inline-block
+      //    content: ''
+      //    width: 4px
+      //    height: 1.5em
+      //    margin: 0 .35em 0 .5em
+      //    white-space: nowrap
+      //    vertical-align: middle
+      //    border: 1px solid rgba(66, 66, 66, .25)
+      //    border-top: none
+      //    border-bottom: none
+      //    transform: skewX(-15deg)
+      //
+      //.post-comment
+      //  &:after
+      //    content: '\f075'
+      //    display: inline-block
+      //    margin: 0 8px
+      //    font: normal 15px/1 FontAwesome
+      //    vertical-align: text-top
+      //    font-size: .8em
+      //    opacity: .7
+
+
+#post-body
+  margin-bottom: 3em
+
+  .container
+    max-width: 800px
+
+// main
+#content
+  padding-right: 2em
+
+  .post-content
+    font-size: 1rem
+    margin-bottom: 2em
+    letter-spacing: .03em
+    color: $primary
+
+  .post-share
+    margin-bottom: 2em
+    span:first-child
+      font-size: 1.25rem
+      font-weight: 400
+
+    .social-icons
+      display: inline-block
+      vertical-align: middle
+
+
+  // Authors
+  .authors
+    .author
+      .author-image
+        padding-top: 0
+        width: 100px
+        height: 100px
+        margin: 0 auto
+
+      .name
+        font-size: 1rem
+        font-weight: 600
+        margin-bottom: .5em
+
+      .bio
+        font-size: .85rem
+        margin-bottom:  .5em
+        color: $secondary
+
+
+  #related-posts
+    .title
+      font-size: 1.5rem
+      font-weight: 400
+      text-align: center
+      text-decoration: underline
+      margin-bottom: 1.5em
+
+    .post-title
+      font-size: 1rem
+      font-weight: 400
+      padding: 1em 0
+      text-align: center
+
+
+
+
+
+
+/*------------------------------
+            Responsive
+  -----------------------------*/
+
+//Extra small < 576px
+//Small       ≥ 576px
+//Medium      ≥ 768px
+//Large       ≥ 992px
+//Extra large ≥ 1200px
+
+// col-lg
+@media (max-width: $lg)
+  #post-body
+    .container
+      max-width: 620px
+
+
+// col-md
+@media (max-width: $md)
+  #post-body
+    .container
+      max-width: 85%
+
+  .feature-area
+    .post-info
+      .post-title
+        font-size: 1.5rem
+        padding: 0 2em
+
+
+@media only screen and (max-width: 680px)
+  .feature-area
+    // applying the style only when posts have the feature image
+    .feature-image + .post-info
+      position: relative
+      margin-top: -41px
+
+      .date-wrapper
+        width: 80px
+        height: 80px
+
+        .date
+          span
+            letter-spacing: .05em
+            line-height: 100%
+
+          .month
+            font-size: 10px
+            padding-top: 13px
+          .day
+            font-size: 35px
+          .year
+            font-size: 12px
+
+
+// col-sm
+@media (max-width: $sm)
+  #post-body
+    .container
+      max-width: 90%

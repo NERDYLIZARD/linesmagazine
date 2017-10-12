@@ -1,0 +1,50 @@
+
+/*---------- image wrapper ----------*/
+.image-wrapper
+  width: 100%
+  padding-top: 58%
+  overflow: hidden
+  position: relative
+
+  img
+    width: 100%
+    position: absolute
+    top: 50%
+    left: 50%
+    min-width: 100%
+    min-height: 100%
+    transform: translateX(-50%) translateY(-50%)
+
+
+.image-round
+  border-radius: 100%
+
+
+.image-feature
+  background: url('../images/lobostudio-hamburg-59475.jpg') center center no-repeat
+  padding: 18% 0
+  background-size: 100%
+  z-index: 0
+
+/*---------- background ----------*/
+.background-image
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: cover
+  z-index: 0
+
+/*---------- background overlay----------*/
+.overlay-dark
+  position: relative
+
+  &:before
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    display: block
+    content: ''
+    opacity: .5
+    background-color: $primary
+    z-index: -1

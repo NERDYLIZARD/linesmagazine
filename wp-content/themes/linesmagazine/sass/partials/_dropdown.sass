@@ -1,0 +1,30 @@
+
+/*---------- Dropdown ----------*/
+.dropdown
+  position: relative
+  display: inline-block
+
+  &:hover
+    .dropdown-list
+      display: block
+
+  .dropdown-list
+    display: none
+    position: absolute
+    right: 5px
+    min-width: 120px
+    padding: .25em 0
+    background-color: $white
+    border: 1px solid $grey_border
+    border-radius: 3px
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.17)
+    z-index: 1
+
+    .dropdown-item
+      display: block
+      padding: 0 .75em
+      font-weight: 300
+
+    .separator
+      margin: .25em 0 .1em
+
