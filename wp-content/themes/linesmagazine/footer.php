@@ -13,19 +13,23 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'linesmagazine' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'linesmagazine' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'linesmagazine' ), 'linesmagazine', '<a href="http://underscores.me/">Underscores.me</a>' );
-			?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+  <footer id="main-footer" class="flex flex-column">
+    <p class="logo"><a href="index.html">Magazine.</a></p>
+    <div class="social-icons">
+      <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+    </div>
+
+    <div class="footer-meta-link">
+<!--      <a href="--><?php //echo get_page_link( get_page_by_title( PAGE_NAME )->ID ); ?><!--">About</a>-->
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact us</a>
+    </div>
+    <p class="copyright">&copy <?php echo date('Y'); ?> All Rights Reserved.</p>
+  </footer>
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
