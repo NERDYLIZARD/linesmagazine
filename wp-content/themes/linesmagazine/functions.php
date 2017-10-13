@@ -158,7 +158,7 @@ add_filter( 'category_template', 'linesmagazine_subcategory_template' );
 
 // custom excerpt length
 function linesmagazine_custom_excerpt_length( $length ) {
-	return 8;
+	return 5;
 }
 add_filter( 'excerpt_length', 'linesmagazine_custom_excerpt_length', 999 );
 
