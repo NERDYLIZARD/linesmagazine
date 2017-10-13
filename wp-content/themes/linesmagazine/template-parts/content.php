@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part for displaying posts (list of post excerpt)
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -9,46 +9,33 @@
 
 ?>
 
+<div class="card shadow-box">
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
 
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php linesmagazine_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
+    <div class="post">
 
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'linesmagazine' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			) );
+	    <?php if (has_post_thumbnail()) : ?>
+      <a href="<?php the_permalink() ?>">
+        <div class="image-wrapper">
+          <?php
+//            the_post_thumbnail();
+//            $post_thumbnail_id = get_post_thumbnail_id();
+//            $post_thumbnail_url = wp_get_attachment_url( $post_thumbnail_id );
+            ?>
+<!--            <img src="--><?php //echo $post_thumbnail_url ?><!--" alt="">-->
+            <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="">
+        </div>
+      </a>
+  	  <?php endif; ?>
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'linesmagazine' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+    <div class="post-info">
+        <p class="post-category"><?php the_category(', ') ?></p>
+        <p class="post-author-prefix"><a href="#"><?php the_author(); ?></a></p>
+        <?php the_title( '<h2 class="post-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+        <p class="post-excerpt"><?php echo get_the_excerpt(); ?></p>
+      </div>
+    </div>
 
-	<footer class="entry-footer">
-		<?php linesmagazine_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
+</div>

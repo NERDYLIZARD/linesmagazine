@@ -146,6 +146,30 @@ function linesmagazine_styles() {
 add_action( 'wp_enqueue_scripts', 'linesmagazine_styles' );
 
 
+// filter for subcategory template
+function linesmagazine_subcategory_template( $template ) {
+	$category = get_queried_object();
+	if( 0 < $category->category_parent )
+		$template = locate_template( 'subcategory.php' );
+	return $template;
+}
+add_filter( 'category_template', 'linesmagazine_subcategory_template' );
+
+
+// custom excerpt length
+function linesmagazine_custom_excerpt_length( $length ) {
+	return 8;
+}
+add_filter( 'excerpt_length', 'linesmagazine_custom_excerpt_length', 999 );
+
+
+// remove "category: " from archive category
+add_filter( 'get_the_archive_title', function ($title) {
+	if ( is_category() ) {
+		$title = single_cat_title( '', false );
+	}
+	return $title;
+});
 
 
 /**

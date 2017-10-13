@@ -30,6 +30,7 @@
     <nav id="secondary-nav" class="flex flex-wrap justify-content-between">
       <div>
         <span id="search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+<!--        <i></i>-->
       </div>
       <div>
       <span id="cart">
