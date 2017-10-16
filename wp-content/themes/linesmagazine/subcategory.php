@@ -9,13 +9,12 @@
 
 get_header(); ?>
 
-<?php
-if ( have_posts() ) : ?>
 
 <!--  header section-->
-  <?php get_template_part( 'template-parts/content', 'header' ); ?>
+<?php get_template_part( 'template-parts/content', 'header' ); ?>
 
 
+<?php if ( have_posts() ) : ?>
   <!-- POSTS -->
   <section id="posts">
     <div class="container">

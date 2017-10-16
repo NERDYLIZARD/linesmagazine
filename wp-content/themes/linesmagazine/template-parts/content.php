@@ -29,11 +29,11 @@
       </a>
   	  <?php endif; ?>
 
-    <div class="post-info">
+      <div class="post-info">
         <p class="post-category"><?php the_category(', ') ?></p>
         <p class="post-author-prefix"><a href="#"><?php the_author(); ?></a></p>
-        <?php the_title( '<h2 class="post-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
-        <p class="post-excerpt"><?php echo get_the_excerpt(); ?></p>
+        <?php the_title( '<h2 class="post-title" lang="lo"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+        <p class="post-excerpt" lang="lo"><?php echo get_the_excerpt(); ?></p>
       </div>
     </div>
 

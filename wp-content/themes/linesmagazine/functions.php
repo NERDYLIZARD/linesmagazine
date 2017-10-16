@@ -172,6 +172,39 @@ add_filter( 'get_the_archive_title', function ($title) {
 });
 
 
+
+add_action('set_object_terms', 'linesmagazine_update_category_modified', 10, 6);
+
+// utilization of sorting subcategory by their latest post
+function linesmagazine_update_category_modified($object_id, $term_ids, $tt_ids, $taxonomy, $append, $old_tt_ids)
+{
+	if($taxonomy == 'category') {
+		global $wpdb;
+
+//		echo '<pre>';
+//		var_export($term_ids);
+//		exit;
+
+		// check if different category has been assigned to post
+			// or just modification of post without touching category
+				// if the latter, then do nothing
+		if ($old_tt_ids[0] == $tt_ids[0])
+			return;
+
+		// update modification time of category
+		$table_name = $wpdb->prefix . 'terms';
+
+		$wpdb->query(
+			$wpdb->prepare("
+				UPDATE $table_name
+				SET term_modified_by_assigning_post = CURRENT_TIMESTAMP
+				WHERE term_id = %d
+			", $term_ids[1])
+		);
+	}
+}
+
+
 /**
  * Implement the Custom Header feature.
  */
