@@ -182,6 +182,8 @@ function linesmagazine_update_category_modified($object_id, $term_ids, $tt_ids, 
 		global $wpdb;
 
 //		echo '<pre>';
+//		var_export($old_tt_ids);
+//		var_export($tt_ids);
 //		var_export($term_ids);
 //		exit;
 
@@ -199,9 +201,42 @@ function linesmagazine_update_category_modified($object_id, $term_ids, $tt_ids, 
 				UPDATE $table_name
 				SET term_modified_by_assigning_post = CURRENT_TIMESTAMP
 				WHERE term_id = %d
-			", $term_ids[1])
+			", $term_ids[0])
 		);
 	}
+}
+
+
+/**
+ * Top level category checkbox
+ */
+add_action( 'admin_footer-post.php',     'linesmagazine_disable_top_categories_checkboxes' );
+add_action( 'admin_footer-post-new.php', 'linesmagazine_disable_top_categories_checkboxes' );
+/**
+ * Disable parent checkboxes in Post Editor.
+ */
+function linesmagazine_disable_top_categories_checkboxes()
+{
+	global $post_type;
+
+	if ( 'post' != $post_type )
+		return;
+	?>
+	<script type="text/javascript">
+    jQuery( "#category-all ul.children" ).each( function() {
+      jQuery(this).closest( "ul" ).parent().children().children( "input" ).attr( 'disabled', 'disabled' );
+    });
+	</script>
+	<?php
+}
+
+add_filter( 'wp_terms_checklist_args', 'linesmagazine_disallowed_checked_ontop' );
+/**
+ * Remove horrid feature that places checked categories on top.
+ */
+function linesmagazine_disallowed_checked_ontop( $args ) {
+	$args['checked_ontop'] = false;
+	return $args;
 }
 
 
