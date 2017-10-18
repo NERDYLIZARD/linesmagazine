@@ -13,7 +13,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <div class="post">
+    <div id="post-preview">
 
 	    <?php if (has_post_thumbnail()) : ?>
       <a href="<?php the_permalink() ?>">
@@ -30,8 +30,9 @@
   	  <?php endif; ?>
 
       <div class="post-info">
-        <p class="post-category"><?php the_category(', ') ?></p>
-        <p class="post-author-prefix"><a href="#"><?php the_author(); ?></a></p>
+        <?php $category = get_the_category()[0] ?>
+        <a class="post-category" href="<?php get_category_link($category->cat_ID) ?>"><?php echo $category->cat_name ?></a>
+        <p class="post-author-prefix"><?php the_author_posts_link(); ?></p>
         <?php the_title( '<h2 class="post-title" lang="lo"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
         <p class="post-excerpt" lang="lo"><?php echo get_the_excerpt(); ?></p>
       </div>

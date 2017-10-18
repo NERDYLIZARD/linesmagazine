@@ -40,47 +40,6 @@
         .year
           font-size: 15px
 
-    .post-title
-      font-size: 1.75rem
-      font-weight: 400
-      margin-bottom: .5em
-      padding: 0 5em
-
-    .breadcrumb
-      font-size: .75rem
-      font-weight: 400
-      color: $secondary
-      text-transform: uppercase
-
-    .post-meta
-      color: $primary
-
-      .post-category, .post-comment
-        font-size: .9rem
-
-      //.post-category
-      //  &:after
-      //    display: inline-block
-      //    content: ''
-      //    width: 4px
-      //    height: 1.5em
-      //    margin: 0 .35em 0 .5em
-      //    white-space: nowrap
-      //    vertical-align: middle
-      //    border: 1px solid rgba(66, 66, 66, .25)
-      //    border-top: none
-      //    border-bottom: none
-      //    transform: skewX(-15deg)
-      //
-      //.post-comment
-      //  &:after
-      //    content: '\f075'
-      //    display: inline-block
-      //    margin: 0 8px
-      //    font: normal 15px/1 FontAwesome
-      //    vertical-align: text-top
-      //    font-size: .8em
-      //    opacity: .7
 
 
 #post-body
@@ -91,10 +50,28 @@
 
 // main
 #content
+  .post-title
+    font-size: 1.75rem
+    font-weight: 400
+    margin-bottom: .5em
+    text-align: center
+
+  .breadcrumb
+    font-size: .75rem
+    font-weight: 400
+    color: $secondary
+    text-transform: uppercase
+    text-align: center
+
+  .post-meta
+    color: $primary
+
+    .post-category, .post-comment
+      font-size: .9rem
+
 
   .post-content
     font-size: 1rem
-    margin-bottom: 2em
     letter-spacing: .03em
     color: $primary
 
@@ -145,13 +122,11 @@
 
 
 
-
-
-
 /*------------------------------
             Responsive
   -----------------------------*/
 
+//Extra small < 576px
 //Extra small < 576px
 //Small       ≥ 576px
 //Medium      ≥ 768px
@@ -166,28 +141,23 @@
 
 
 // col-md
-@media (max-width: $md)
-  #post-body
-    .container
-      max-width: 85%
-
+@media only screen and (max-width: $md)
   .feature-area
-    .post-info
-      .post-title
-        font-size: 1.5rem
-        padding: 0 2em
 
-
-@media only screen and (max-width: 680px)
-  .feature-area
     // applying the style only when posts have the feature image
     .feature-image + .post-info
       position: relative
       margin-top: -41px
 
+    .post-info
+      .post-title
+        font-size: 1.5rem
+        padding: 0 2em
+
       .date-wrapper
         width: 80px
         height: 80px
+        margin: 0 auto 2em
 
         .date
           span
@@ -201,6 +171,10 @@
             font-size: 35px
           .year
             font-size: 12px
+
+  #post-body
+    .container
+      max-width: 85%
 
 
 // col-sm
