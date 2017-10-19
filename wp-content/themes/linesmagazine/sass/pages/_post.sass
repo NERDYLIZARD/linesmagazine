@@ -43,7 +43,7 @@
 
 
 #post-body
-  margin-bottom: 3em
+  margin-bottom: 1em
 
   .container
     max-width: 800px
@@ -105,20 +105,64 @@
         margin-bottom:  .5em
         color: $secondary
 
+  // custom related posts
+    // no use for now
+  //#related-posts
+  //  .title
+  //    font-size: 1.5rem
+  //    font-weight: 400
+  //    text-align: center
+  //    text-decoration: underline
+  //    margin-bottom: 1.5em
+  //
+  //  .post-title
+  //    font-size: 1rem
+  //    font-weight: 400
+  //    padding: 1em 0
+  //    text-align: center
 
-  #related-posts
-    .title
-      font-size: 1.5rem
-      font-weight: 400
-      text-align: center
-      text-decoration: underline
-      margin-bottom: 1.5em
 
-    .post-title
-      font-size: 1rem
-      font-weight: 400
-      padding: 1em 0
-      text-align: center
+
+// rp4wp related posts plugin
+.rp4wp-related-posts
+  padding-top: 2em
+  h3
+    font-size: 1.5rem
+    font-weight: 400
+    text-align: center
+    text-decoration: underline
+    margin-bottom: 1em
+
+  ul
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: 0
+
+    li
+      @extend .card
+
+      .rp4wp-related-post-image
+        width: 100%
+        padding-top: 58%
+        overflow: hidden
+        position: relative
+
+        a
+          position: absolute
+          top: 50%
+          left: 50%
+          min-width: 100%
+          min-height: 100%
+          transform: translateX(-50%) translateY(-50%)
+
+          img
+            width: 100%
+
+      .rp4wp-related-post-content
+        font-size: .85rem
+        font-weight: 400
+        padding: 1em 0
+        text-align: center
 
 
 
