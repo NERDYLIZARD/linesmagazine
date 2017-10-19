@@ -12,11 +12,12 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <!--feature area-->
   <section class="feature-area">
+
     <!--feature image-->
 	  <?php if (has_post_thumbnail()) : ?>
-      <section
-        class="feature-image image-feature"
-        style="background-image: url('<?php echo get_the_post_thumbnail_url() ?>');"></section>
+      <section class="feature-image image-wrapper image-feature">
+        <?php the_post_thumbnail(); ?>
+      </section>
     <?php endif; ?>
 
     <!--title & post meta-->

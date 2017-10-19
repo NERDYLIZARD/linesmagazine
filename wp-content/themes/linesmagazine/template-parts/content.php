@@ -16,17 +16,11 @@
     <div id="post-preview">
 
 	    <?php if (has_post_thumbnail()) : ?>
-      <a href="<?php the_permalink() ?>">
-        <div class="image-wrapper">
-          <?php
-//            the_post_thumbnail();
-//            $post_thumbnail_id = get_post_thumbnail_id();
-//            $post_thumbnail_url = wp_get_attachment_url( $post_thumbnail_id );
-            ?>
-<!--            <img src="--><?php //echo $post_thumbnail_url ?><!--" alt="">-->
-            <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="">
-        </div>
-      </a>
+        <a href="<?php the_permalink() ?>">
+          <div class="image-wrapper">
+            <?php the_post_thumbnail() ?>
+          </div>
+        </a>
   	  <?php endif; ?>
 
       <div class="post-info">

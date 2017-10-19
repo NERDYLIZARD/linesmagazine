@@ -87,6 +87,71 @@
             transform: scaleX(1)
 
 
+// header
+.primary-header
+
+  .primary-title, .secondary-title
+    color: $white
+    font-weight: 400
+    text-align: center
+
+  .secondary-title
+    font-size: .85rem
+    margin-bottom: 0.5em
+    letter-spacing: .02em
+    word-spacing: .1em
+    a:hover
+      color: inherit
+      text-decoration: underline
+
+  .primary-title
+    font-size: 3rem
+    letter-spacing: .02em
+    word-spacing: .1em
+    margin-bottom: .1em
+
+
+.primary-header.no-feature-image
+  padding: 2em 0 0
+  margin-bottom: -1em
+
+  .primary-title, .secondary-title
+    color: $primary
+
+  .primary-title
+    font-size: 2.25rem
+
+
+// Header: for posts & magazines
+/*---------- HEADER ----------*/
+.secondary-header
+  margin: 0 0 2em
+
+  h2
+    font-size: 1.65rem
+    font-weight: 400
+
+
+
+/*------------------------------
+            Responsive
+  -----------------------------*/
+
+//Extra small < 576px
+//Small       ≥ 576px
+//Medium      ≥ 768px
+//Large       ≥ 992px
+//Extra large ≥ 1200px
+
+@media (max-width: $md)
+  .primary-header
+    .primary-title
+      font-size: 2rem
+
+  .primary-header.no-feature-image
+    .primary-title
+      font-size: 2rem
+
 
 // col-sm
 @media (max-width: $sm)
@@ -96,3 +161,10 @@
         li
           a
             margin: 0 .5em
+
+  /*---------- Header: for posts & magazines ----------*/
+  .secondary-header
+    h2
+      font-size: 1.65rem
+    .button
+      font-size: .75rem

@@ -35,38 +35,39 @@ get_header(); ?>
   <?php foreach($sub_categories as $sub_category) : ?>
 
     <section class="primary-category pt-12 pb-12 border-bottom">
-    <div class="container">
+      <div class="container">
 
-      <header class="row justify-content-between align-items-center">
-        <div class="col-auto">
-          <h2><a href="<?php echo esc_url(get_category_link($sub_category->term_id)) ?>"><?php echo $sub_category->name?></a></h2>
-        </div>
-        <div class="col-auto">
-          <a href="<?php echo esc_url(get_category_link($sub_category->term_id)) ?>" class="button button-small">See all</a>
-        </div>
-      </header>
+        <header class="secondary-header">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-auto">
+              <h2><a href="<?php echo esc_url(get_category_link($sub_category->term_id)) ?>"><?php echo $sub_category->name?></a></h2>
+            </div>
+            <div class="col-auto">
+              <a href="<?php echo esc_url(get_category_link($sub_category->term_id)) ?>" class="button button-small">See all</a>
+            </div>
+          </div>
+        </header>
 
-      <div class="row row-card">
+        <div class="row row-card">
+          <?php
+          /* Start the Loop */
+          $posts = get_posts([
+            'posts_per_page'  => 3,
+            'category'        => $sub_category->term_id,
+          ]);
+  //        echo '<pre>' . var_export($posts, true) . '</pre>';
 
-        <?php
-				/* Start the Loop */
-				$posts = get_posts([
-					'posts_per_page'  => 3,
-					'category'        => $sub_category->term_id,
-        ]);
-//        echo '<pre>' . var_export($posts, true) . '</pre>';
+          foreach ($posts as $post) : setup_postdata($post); ?>
 
-        foreach ($posts as $post) : setup_postdata($post); ?>
+            <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 
-					<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-
-        <?php endforeach;
-        wp_reset_postdata();?>
+          <?php endforeach;
+          wp_reset_postdata();?>
 
 
-      </div><!--   .row-->
-    </div><!--  .container-->
-  </section><!--  .primary-category-->
+        </div><!--   .row-->
+      </div><!--  .container-->
+    </section><!--  .primary-category-->
 
   <?php endforeach; ?>
 

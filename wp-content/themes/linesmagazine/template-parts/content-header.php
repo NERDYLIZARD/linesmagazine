@@ -3,8 +3,8 @@ $category = get_queried_object();
 $category_feature_image = get_field('category_feature_image', $category->taxonomy . '_' . $category->term_id );
 
 // provide class and background image according to availability of feature image
-$category_header_class = 'category-header ';
-$category_header_class .= $category_feature_image ? 'image-feature overlay-dark' : 'no-feature-image';
+$category_header_class = 'primary-header ';
+$category_header_class .= $category_feature_image ? 'image-feature-background overlay-dark' : 'no-feature-image';
 
 $category_feature_image_style = $category_feature_image ? "background-image: url('$category_feature_image');" : '';
 ?>
