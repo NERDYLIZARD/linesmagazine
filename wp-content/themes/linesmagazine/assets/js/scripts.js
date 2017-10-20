@@ -36,4 +36,18 @@ jQuery(document).ready(function ($) {
   });
 
 
+  // owl carousel
+  $('#home-slider .owl-carousel').owlCarousel({
+    items: 1,
+    loop: true,
+    video:true,
+    autoHeight: true,
+    autoplay: true,
+    autoplayHoverPause: true,
+    autoplayTimeout: 5000,
+    smartSpeed: 800,
+    nav: true,
+    navText: ['', ''],
+  });
+
 });
