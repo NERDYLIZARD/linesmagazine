@@ -40,7 +40,7 @@ jQuery(document).ready(function ($) {
   $('#home-slider .owl-carousel').owlCarousel({
     items: 1,
     loop: true,
-    video:true,
+    video: true,
     autoHeight: true,
     autoplay: true,
     autoplayHoverPause: true,
@@ -48,6 +48,15 @@ jQuery(document).ready(function ($) {
     smartSpeed: 800,
     nav: true,
     navText: ['', ''],
+
+    // hide dot show that video toolbar is accessible
+    onPlayVideo: function () {
+      $('.owl-dots').hide();
+    },
+    onTranslate: function () {
+      $('.owl-dots').show();
+    }
   });
+
 
 });
