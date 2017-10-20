@@ -8,28 +8,47 @@ get_header(); ?>
 <section id="home-slider">
 
   <div class="owl-carousel owl-theme">
+    <?php
+      $home_slides = new WP_Query([
+        'post_type' => 'home_slide'
+      ]);
 
-    <div class="item-video">
-      <a class="owl-video" href="https://www.youtube.com/watch?v=8TpcBDJZsJA"></a>
-    </div>
+      if ( $home_slides->have_posts() ) : ?>
 
-    <div class="item">
-      <a href="#">
-        <div class="image-wrapper image-feature">
-          <img src="<?php echo get_template_directory_uri() . '/assets/images/flynn-doherty-196576 (1).jpg'?>" alt="">
-        </div>
-      </a>
-    </div>
-    <div class="item">
-      <a href="#">
-        <div class="image-wrapper image-feature">
-          <img src="<?php echo get_template_directory_uri() . '/assets/images/hans-vivek-249071.jpg'?>" alt="">
-        </div>
-      </a>
-    </div>
-  </div>
+      <?php
+        while ( $home_slides->have_posts() ) :
+          $home_slides->the_post();
+          $slide_type = get_field('slide_type', get_the_ID());
+          $slide_link = get_field('slide_link', get_the_ID());
+      ?>
+        <?php
+          if ($slide_type == 'image') :
+            $slide_image = get_field('slide_image', get_the_ID());
+            ?>
+            <div class="item">
+              <a href="<?php echo $slide_link?>">
+                <div class="image-wrapper image-feature">
+                  <img src="<?php echo $slide_image?>" alt="">
+                </div>
+              </a>
+            </div>
+<!--       video type  -->
+        <?php else: ?>
+            <div class="item-video">
+              <a class="owl-video" href="<?php echo $slide_link?>"></a>
+            </div>
+        <?php endif; ?>
 
-</section>
+      <?php endwhile; wp_reset_postdata(); ?>
+
+    <?php endif; ?><!--    if has_posts-->
+
+  </div><!--  .owl-carousel-->
+
+</section><!--#home-slider-->
+
+
+<!--popular posts-->
 
 
 <?php

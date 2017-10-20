@@ -117,9 +117,8 @@ add_action( 'widgets_init', 'linesmagazine_widgets_init' );
  * Enqueue scripts and styles.
  */
 function linesmagazine_scripts() {
-	wp_enqueue_script( 'linesmagazine-jquery', get_template_directory_uri() . '/node_modules/jquery/dist/jquery.js');
+	wp_enqueue_script( 'linesmagazine-jquery', get_template_directory_uri() . '/node_modules/jquery/dist/jquery.min.js');
 	wp_enqueue_script( 'linesmagazine-owl-carousel', get_template_directory_uri() . '/node_modules/owl.carousel/dist/owl.carousel.min.js', ['linesmagazine-jquery'], time(), true );
-//	wp_enqueue_script( 'linesmagazine-main-js', get_template_directory_uri() . '/assets/js/scripts.js', ['jquery', linesmagazine-owl-carousel], time(), true );
 	wp_enqueue_script( 'linesmagazine-main-js', get_template_directory_uri() . '/assets/js/scripts.js', ['linesmagazine-jquery', 'linesmagazine-owl-carousel'], time(), true );
 
 	wp_enqueue_script( 'linesmagazine-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
