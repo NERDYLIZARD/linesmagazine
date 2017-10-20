@@ -1,0 +1,8 @@
+{
+  "name": "linesmagazine",
+  "author": "Hoppy Bouasavanh",
+
+  "dependencies": {
+    "owl.carousel": "^2.2.0"
+  }
+}

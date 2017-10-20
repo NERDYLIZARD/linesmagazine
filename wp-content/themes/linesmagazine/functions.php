@@ -118,6 +118,7 @@ add_action( 'widgets_init', 'linesmagazine_widgets_init' );
  */
 function linesmagazine_scripts() {
 
+	wp_enqueue_script( 'linesmagazine-owl-carousel', get_template_directory_uri() . '/node_modules/owl.carousel/dist/owl.carousel.min.js', ['jquery'], time(), true );
 	wp_enqueue_script( 'linesmagazine-main-js', get_template_directory_uri() . '/assets/js/scripts.js', ['jquery'], time(), true );
 
 	wp_enqueue_script( 'linesmagazine-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -133,13 +134,11 @@ add_action( 'wp_enqueue_scripts', 'linesmagazine_scripts' );
 
 // stylesheets
 function linesmagazine_styles() {
-//	wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/style.css', [], time(), 'all' );
-//	wp_enqueue_style( 'linesmagazine-bootstrap-reboot', get_template_directory_uri() . '/assets/css/bootstrap-reboot.min.css', ['main-css']);
+	wp_enqueue_style( 'linesmagazine-owl-carousel', get_template_directory_uri() . '/node_modules/owl.carousel/dist/assets/owl.carousel.min.css');
 	wp_enqueue_style( 'linesmagazine-bootstrap-reboot', get_template_directory_uri() . '/assets/css/bootstrap-reboot.min.css', []);
-//	wp_enqueue_style( 'linesmagazine-bootstrap-grid', get_template_directory_uri() . '/assets/css/bootstrap-grid.min.css', ['main-css']);
 	wp_enqueue_style( 'linesmagazine-bootstrap-grid', get_template_directory_uri() . '/assets/css/bootstrap-grid.min.css', []);
-//	wp_enqueue_style( 'linesmagazine-main-css', get_template_directory_uri() . '/assets/css/style', ['main-css', 'linesmagazine-bootstrap-grid', 'linesmagazine-bootstrap-reboot' ], time(), all);
-	wp_enqueue_style( 'linesmagazine-main-css', get_template_directory_uri() . '/assets/css/style', [ 'linesmagazine-bootstrap-grid', 'linesmagazine-bootstrap-reboot' ], time(), all);
+	wp_enqueue_style( 'linesmagazine-main-css', get_template_directory_uri() . '/assets/css/style', [ 'linesmagazine-owl-carousel', 'linesmagazine-bootstrap-grid', 'linesmagazine-bootstrap-reboot' ], time(), all);
+
 	wp_enqueue_style( 'linesmagazine-google-fonts', 'https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:100,300,400,600', [ 'linesmagazine-main-css' ], time(), all );
 	wp_enqueue_style( 'linesmagazine-font-awesome', get_template_directory_uri() . '/assets/css/font-awesome/css/font-awesome.min.css', [ 'linesmagazine-main-css' ], time(), all);
 }
@@ -205,7 +204,6 @@ function linesmagazine_update_category_modified($object_id, $term_ids, $tt_ids, 
 		);
 	}
 }
-
 
 
 // append the_content
@@ -285,6 +283,13 @@ function linesmagazine_append_authors_to_the_content($content)
     endif; // endif single
 	return $content;
 }
+
+
+// thumbnail size for related post plugin
+function lines_magazine_modify_rp4wp_thumbnail_size( $thumb_size ) {
+	return 'medium';
+}
+add_filter( 'rp4wp_thumbnail_size', 'lines_magazine_modify_rp4wp_thumbnail_size' );
 
 
 /**
