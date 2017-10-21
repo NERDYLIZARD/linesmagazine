@@ -10,10 +10,12 @@
 get_header(); ?>
 
 
-<!--  header section-->
-<?php get_template_part( 'template-parts/content', 'header' ); ?>
-
 <?php if ( have_posts() ) : ?>
+
+
+  <!--  header section-->
+	<?php get_template_part( 'template-parts/content', 'header' ); ?>
+
   <!-- POSTS by Category -->
   <?php
     $category = get_queried_object();

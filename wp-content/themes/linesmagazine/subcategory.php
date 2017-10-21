@@ -10,13 +10,13 @@
 get_header(); ?>
 
 
-<!--  header section-->
-<?php get_template_part( 'template-parts/content', 'header' ); ?>
-
-
 <?php if ( have_posts() ) : ?>
+
+  <!--  header section-->
+	<?php get_template_part( 'template-parts/content', 'header' ); ?>
+
   <!-- POSTS -->
-  <section id="posts">
+  <section class="posts border-bottom">
     <div class="container">
       <div class="row row-card">
 
@@ -27,8 +27,11 @@ get_header(); ?>
         get_template_part( 'template-parts/content', get_post_format() );
 
       endwhile; ?>
-
       </div><!--          .row-->
+
+      <!--      pagination-->
+	    <?php get_template_part( 'template-parts/content', 'pagination' ); ?>
+
     </div><!--        .container-->
   </section>
 

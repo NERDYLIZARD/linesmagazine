@@ -14,7 +14,7 @@
 	</div><!-- #content -->
 
   <footer id="main-footer" class="flex flex-column">
-    <p class="logo"><a href="index.html">Magazine.</a></p>
+    <p class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Magazine.</a></p>
     <div class="social-icons">
       <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
       <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
