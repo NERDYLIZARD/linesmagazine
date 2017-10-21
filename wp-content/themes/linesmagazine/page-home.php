@@ -48,7 +48,7 @@ get_header(); ?>
 
 
 <!--popular posts-->
-<section id="popular-post" class="pt-12 pb-12">
+<section id="popular-post" class="pt-12 pb-12 border-bottom">
   <div class="container">
 
     <header class="secondary-header">
@@ -82,6 +82,79 @@ get_header(); ?>
 
 
 <!-- Category Lists-->
+
+<!--Straight Lines-->
+<?php $category = get_category(5); ?>
+<section class="primary-category pt-12 pb-12 border-bottom">
+  <div class="container">
+
+  <header class="secondary-header">
+    <div class="row justify-content-between align-items-center">
+      <div class="col-auto">
+        <h2><a href="<?php echo esc_url(get_category_link($category->term_id)) ?>"><?php echo $category->name?></a></h2>
+      </div>
+      <div class="col-auto">
+        <a href="<?php echo esc_url(get_category_link($category->term_id)) ?>" class="button button-small">See all</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="row row-card">
+      <?php
+      /* Start the Loop */
+      $posts = get_posts([
+        'posts_per_page'  => 3,
+        'category'        => $category->term_id,
+      ]);
+      //        echo '<pre>' . var_export($posts, true) . '</pre>';
+
+      foreach ($posts as $post) : setup_postdata($post); ?>
+
+        <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+
+      <?php endforeach;
+      wp_reset_postdata();?>
+
+
+    </div><!--   .row-->
+  </div><!--  .container-->
+</section><!--  .primary-category-->
+
+
+<!--Flow Lines-->
+<?php $category = get_category(6); ?>
+<section class="primary-category pt-12 pb-12 border-bottom">
+  <div class="container">
+
+  <header class="secondary-header">
+    <div class="row justify-content-between align-items-center">
+      <div class="col-auto">
+        <h2><a href="<?php echo esc_url(get_category_link($category->term_id)) ?>"><?php echo $category->name?></a></h2>
+      </div>
+      <div class="col-auto">
+        <a href="<?php echo esc_url(get_category_link($category->term_id)) ?>" class="button button-small">See all</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="row row-card">
+      <?php
+      /* Start the Loop */
+      $posts = get_posts([
+        'posts_per_page'  => 3,
+        'category'        => $category->term_id,
+      ]);
+
+      foreach ($posts as $post) : setup_postdata($post); ?>
+
+        <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+
+      <?php endforeach;
+      wp_reset_postdata();?>
+
+    </div><!--   .row-->
+  </div><!--  .container-->
+</section><!--  .primary-category-->
 
 
 

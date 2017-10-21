@@ -25,7 +25,7 @@
 
       <div class="post-info">
         <?php $category = get_the_category()[0] ?>
-        <a class="post-category" href="<?php get_category_link($category->cat_ID) ?>"><?php echo $category->cat_name ?></a>
+        <a class="post-category" href="<?php echo get_category_link($category->cat_ID) ?>"><?php echo $category->cat_name ?></a>
         <p class="post-author-prefix"><?php the_author_posts_link(); ?></p>
         <?php the_title( '<h2 class="post-title" lang="lo"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
         <p class="post-excerpt" lang="lo"><?php echo get_the_excerpt(); ?></p>
