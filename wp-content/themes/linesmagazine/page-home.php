@@ -44,11 +44,46 @@ get_header(); ?>
     <?php endif; ?><!--    if has_posts-->
 
   </div><!--  .owl-carousel-->
-
 </section><!--#home-slider-->
 
 
 <!--popular posts-->
+<section id="popular-post" class="pt-12 pb-12">
+  <div class="container">
+
+    <header class="secondary-header">
+      <div class="row justify-content-center">
+        <div class="col-auto">
+          <h2>Popular</h2>
+        </div>
+      </div>
+    </header>
+
+    <div class="row row-card">
+    <?php
+      $popular_posts = pvc_get_most_viewed_posts([
+        'post_type'       => 'post',
+        'posts_per_page'  => 6,
+        'date_query'      => [
+          'column'  => 'post_date',
+          'after'   => '- 60 days'
+        ]
+      ]);
+
+	    foreach ($popular_posts as $post) : setup_postdata($post); ?>
+
+		    <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+
+	    <?php endforeach;	wp_reset_postdata();?>
+
+    </div><!--    .row-->
+  </div><!--    .container-->
+</section><!--#popular-post-->
+
+
+<!-- Category Lists-->
+
+
 
 
 <?php

@@ -9,19 +9,19 @@
 
 ?>
 
-<div class="card shadow-box">
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div class="card shadow-box">
+  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     <div id="post-preview">
 
-	    <?php if (has_post_thumbnail()) : ?>
+      <?php if (has_post_thumbnail()) : ?>
         <a href="<?php the_permalink() ?>">
           <div class="image-wrapper">
             <?php the_post_thumbnail() ?>
           </div>
         </a>
-  	  <?php endif; ?>
+      <?php endif; ?>
 
       <div class="post-info">
         <?php $category = get_the_category()[0] ?>
@@ -32,5 +32,5 @@
       </div>
     </div>
 
-</article><!-- #post-<?php the_ID(); ?> -->
-</div>
+  </article><!-- #post-<?php the_ID(); ?> -->
+</div><!--  card-->
