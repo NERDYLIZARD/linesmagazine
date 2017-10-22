@@ -53,10 +53,12 @@
       </div>
     </nav><!--secondary-nav-->
 
-    <form id="search-form">
-      <span class="close-icon"><i class="fa fa-times fa-lg fa-light"></i></span>
-      <input type="text" placeholder="Search">
-    </form>
+<!--    <form id="search-form">-->
+<!--      <span class="close-icon"><i class="fa fa-times fa-lg fa-light"></i></span>-->
+<!--      <input type="text" placeholder="Search">-->
+<!--    </form>-->
+
+    <?php echo get_search_form(); ?>
 
     <p class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Magazines.</a></p>
 

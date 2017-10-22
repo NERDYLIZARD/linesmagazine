@@ -14,7 +14,7 @@ get_header(); ?>
 
 
   <!--  header section-->
-	<?php get_template_part( 'template-parts/content', 'header' ); ?>
+	<?php get_template_part( 'template-parts/content', 'category-header' ); ?>
 
   <!-- POSTS by Category -->
   <?php

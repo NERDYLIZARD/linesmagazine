@@ -35,6 +35,11 @@ jQuery(document).ready(function ($) {
     $('#search-form').slideUp();
   });
 
+  // clear form on reload
+  $('#search-form').ready(function () {
+    $(this).find("input[type=text]").val('');
+  });
+
 
   // owl carousel
   $('#home-slider .owl-carousel').owlCarousel({
