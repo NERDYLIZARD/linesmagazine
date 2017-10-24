@@ -116,10 +116,26 @@ add_action( 'widgets_init', 'linesmagazine_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
+
+// conditional styles & scripts
+// owl carousel
+  // load when required
+function linesmagazine_owl_carousel() {
+
+  if (!is_front_page())
+    return;
+
+	wp_enqueue_style( 'linesmagazine-owl-theme-default', get_template_directory_uri() . '/node_modules/owl.carousel/dist/assets/owl.theme.default.min.css');
+	wp_enqueue_style( 'linesmagazine-owl-carousel', get_template_directory_uri() . '/node_modules/owl.carousel/dist/assets/owl.carousel.min.css', [ 'linesmagazine-owl-theme-default' ] );
+
+	wp_enqueue_script( 'linesmagazine-owl-carousel', get_template_directory_uri() . '/node_modules/owl.carousel/dist/owl.carousel.min.js', ['jquery'], time(), true );
+}
+add_action( 'wp_enqueue_scripts', 'linesmagazine_owl_carousel' );
+
+
+
 function linesmagazine_scripts() {
-	wp_enqueue_script( 'linesmagazine-jquery', get_template_directory_uri() . '/node_modules/jquery/dist/jquery.min.js');
-	wp_enqueue_script( 'linesmagazine-owl-carousel', get_template_directory_uri() . '/node_modules/owl.carousel/dist/owl.carousel.min.js', ['linesmagazine-jquery'], time(), true );
-	wp_enqueue_script( 'linesmagazine-main-js', get_template_directory_uri() . '/assets/js/scripts.js', ['linesmagazine-jquery', 'linesmagazine-owl-carousel'], time(), true );
+	wp_enqueue_script( 'linesmagazine-main-js', get_template_directory_uri() . '/assets/js/scripts.js', [ 'jquery' ], time(), true );
 
 	wp_enqueue_script( 'linesmagazine-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -134,14 +150,10 @@ add_action( 'wp_enqueue_scripts', 'linesmagazine_scripts' );
 
 // stylesheets
 function linesmagazine_styles() {
-	wp_enqueue_style( 'linesmagazine-owl-theme-default', get_template_directory_uri() . '/node_modules/owl.carousel/dist/assets/owl.theme.default.min.css');
-	wp_enqueue_style( 'linesmagazine-owl-carousel', get_template_directory_uri() . '/node_modules/owl.carousel/dist/assets/owl.carousel.min.css', [ 'linesmagazine-owl-theme-default' ] );
-	wp_enqueue_style( 'linesmagazine-bootstrap-reboot', get_template_directory_uri() . '/assets/css/bootstrap-reboot.min.css', []);
-	wp_enqueue_style( 'linesmagazine-bootstrap-grid', get_template_directory_uri() . '/assets/css/bootstrap-grid.min.css', []);
-	wp_enqueue_style( 'linesmagazine-main-css', get_template_directory_uri() . '/assets/css/style', [ 'linesmagazine-owl-carousel', 'linesmagazine-bootstrap-grid', 'linesmagazine-bootstrap-reboot' ], time(), all);
+	wp_enqueue_style( 'linesmagazine-main-css', get_template_directory_uri() . '/assets/css/style.css', [], time(), all);
 
 	wp_enqueue_style( 'linesmagazine-google-fonts', 'https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:100,300,400,600', [ 'linesmagazine-main-css' ], time(), all );
-	wp_enqueue_style( 'linesmagazine-font-awesome', get_template_directory_uri() . '/assets/css/font-awesome/css/font-awesome.min.css', [ 'linesmagazine-main-css' ], time(), all);
+	wp_enqueue_style( 'linesmagazine-font-awesome', get_template_directory_uri() . '/node_modules/font-awesome/css/font-awesome.min.css', [ 'linesmagazine-main-css' ], time(), all);
 }
 add_action( 'wp_enqueue_scripts', 'linesmagazine_styles' );
 
@@ -181,12 +193,6 @@ function linesmagazine_update_category_modified($object_id, $term_ids, $tt_ids, 
 	if($taxonomy == 'category') {
 		global $wpdb;
 
-//		echo '<pre>';
-//		var_export($old_tt_ids);
-//		var_export($tt_ids);
-//		var_export($term_ids);
-//		exit;
-
 		// check if different category has been assigned to post
 			// or just modification of post without touching category
 				// if the latter, then do nothing
@@ -214,7 +220,7 @@ function linesmagazine_append_authors_to_the_content($content)
 {
 	if (is_single()) :
 		$content .= '
-    <section class="authors pt-10 pb-4 border-top border-bottom">
+    <section class="authors pt-10 pb-4 border-top">
       <div class="row justify-content-center">';
 
 //            if coauthor plugin is activated
@@ -265,7 +271,7 @@ function linesmagazine_append_authors_to_the_content($content)
                   $content .= '<a href="' . $author_twitter . '"><i class="fa fa-twitter" aria-hidden="true"></i></a>';
 
                 if ( $author_email )
-                  $content .= '<a href="mailto:' . $author_email . '"><i class="fa fa-envelope" aria-hidden="true"></i></a>';
+                  $content .= '<a href="mailto:' . $author_email . '"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>';
 
                 $content .= '
                 </div>
