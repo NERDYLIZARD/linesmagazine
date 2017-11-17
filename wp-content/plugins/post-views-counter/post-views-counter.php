@@ -2,7 +2,7 @@
 /*
 Plugin Name: Post Views Counter
 Description: Post Views Counter allows you to display how many times a post, page or custom post type had been viewed in a simple, fast and reliable way.
-Version: 1.2.8
+Version: 1.2.9
 Author: dFactory
 Author URI: http://www.dfactory.eu/
 Plugin URI: http://www.dfactory.eu/plugins/post-views-counter/
@@ -31,7 +31,7 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) :
 	 * Post Views Counter final class.
 	 *
 	 * @class Post_Views_Counter
-	 * @version	1.2.8
+	 * @version	1.2.9
 	 */
 	final class Post_Views_Counter {
 
@@ -80,7 +80,7 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) :
 				'link_to_post'		 => true,
 				'icon_class'		 => 'dashicons-chart-bar'
 			),
-			'version'	 => '1.2.8'
+			'version'	 => '1.2.9'
 		);
 
 		/**
@@ -352,7 +352,7 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) :
 				'pvc-admin-post', POST_VIEWS_COUNTER_URL . '/js/admin-post.js', array( 'jquery' ), $this->defaults['version']
 			);
 
-			wp_register_script(
+			wp_register_script( 
 				'pvc-admin-quick-edit', POST_VIEWS_COUNTER_URL . '/js/admin-quick-edit.js', array( 'jquery', 'inline-edit-post' ), $this->defaults['version']
 			);
 
@@ -391,7 +391,10 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) :
 					return;
 
 				wp_enqueue_style( 'pvc-admin' );
-				wp_enqueue_script( 'pvc-admin-quick-edit' );
+
+				// woocommerce
+				if ( get_post_type() !== 'product' )
+					wp_enqueue_script( 'pvc-admin-quick-edit' );
 			}
 		}
 		

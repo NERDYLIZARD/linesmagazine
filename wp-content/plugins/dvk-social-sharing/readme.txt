@@ -3,8 +3,8 @@ Contributors: DvanKooten, ibericode
 Donate link: https://dannyvankooten.com/donate/
 Tags: social, social sharing, buttons, twitter, googleplus, facebook
 Requires at least: 3.7
-Tested up to: 4.7
-Stable tag: 1.3
+Tested up to: 4.8.2
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,10 +50,8 @@ You can have the plugin load two very small files to add icons and a pop-up func
 
 If you have created your own language pack, or have an update of an existing one, you can send [gettext PO and MO files](http://codex.wordpress.org/Translating_WordPress) to me so that I can bundle it into the social sharing plugin. You can [download the latest PO file here](http://plugins.svn.wordpress.org/dvk-social-sharing/trunk/languages/dvk-social-sharing.po).
 
-**More information**
+Enjoying this plugin? Check out other [WordPress plugins](https://dannyvankooten.com/wordpress-plugins/) by the same author
 
-- [Social Sharing by Danny](https://dannyvankooten.com/wordpress-plugins/social-sharing-by-danny/)
-- Check out more [WordPress plugins](https://dannyvankooten.com/wordpress-plugins/) by the same author
 
 == Frequently Asked Questions ==
 
@@ -137,6 +135,11 @@ The texts for the different links. Defaults to the string set in the translation
 Have a look at the [frequently asked questions](https://wordpress.org/plugins/dvk-social-sharing/faq/) section for some examples of additional customization.
 
 == Changelog ==
+
+
+#### 1.3.1 - October 26, 2017
+
+Misc. textual improvements.
 
 
 #### 1.3 - October 4, 2017

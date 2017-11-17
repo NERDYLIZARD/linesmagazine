@@ -1,6 +1,11 @@
 Changelog
 ===================
 
+#### 1.3.1 - October 26, 2017
+
+Misc. textual improvements.
+
+
 #### 1.3 - October 4, 2017
 
 **Additions**

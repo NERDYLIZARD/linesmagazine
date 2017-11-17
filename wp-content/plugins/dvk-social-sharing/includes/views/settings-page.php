@@ -136,17 +136,31 @@ $networks = array(
 	<div class="dvkss-column dvkss-secondary">
 
 		<div class="dvkss-box">
-			<h3 class="dvkss-title"><?php _e( 'Donate $10, $20 or $50', 'dvk-social-sharing' ); ?></h3>
-			<p><?php _e( 'If you like this plugin, consider supporting it by donating a token of your appreciation.', 'dvk-social-sharing' ); ?></p>
-			<p><a href="https://dannyvankooten.com/donate/" class="button-primary"><?php _e( 'Donate with PayPal', 'scroll-triggered-boxes' ); ?></a></p>
+			<h3 class="dvkss-title"><?php _e( 'Happy with the plugin?', 'dvk-social-sharing' ); ?></h3>
+			<p><?php _e( 'If you like this plugin, consider supporting it in one the following ways.', 'dvk-social-sharing' ); ?></p>
 
-		
-			<p><?php _e( 'Some other ways to support this plugin', 'dvk-social-sharing' ); ?></p>
-			<ul class="ul-square">
+            <ul class="ul-square">
 				<li><a href="https://wordpress.org/support/view/plugin-reviews/dvk-social-sharing?rate=5#postform" target="_blank"><?php printf( __( 'Leave a %s review on WordPress.org', 'dvk-social-sharing' ), '&#9733;&#9733;&#9733;&#9733;&#9733;' ); ?></a></li>
-				<li><a href="https://twitter.com/intent/tweet/?text=<?php echo urlencode('I am using Social Sharing by Danny to show sharing options on my WordPress site. It\'s great!'); ?>&via=DannyvanKooten&url=<?php echo urlencode('http://wordpress.org/plugins/dvk-social-sharing/'); ?>" target="_blank">Tweet about Social Sharing by Danny</a></li>
-				<li><a href="https://wordpress.org/plugins/dvk-social-sharing/#compatibility"><?php _e( 'Vote "works" on the WordPress.org plugin page', 'dvk-social-sharing' ); ?></a></li>
+				<li><a href="https://twitter.com/intent/tweet/?text=<?php echo urlencode('Need social sharing options for your WordPress site? This plugin is great: '); ?>&via=dvkoot&url=<?php echo urlencode('http://wordpress.org/plugins/dvk-social-sharing/'); ?>" target="_blank">Tweet about the plugin</a></li>
 			</ul>
+
+            <p>Or check out the following plugins by the same author.</p>
+            <ul class="ul-square">
+                <li>
+                    <a href="https://wordpress.org/plugins/mailchimp-for-wp/">MailChimp for WordPress</a><br />
+                    The easiest way to connect your WordPress site to MailChimp.
+                </li>
+                <li>
+                    <a href="https://wordpress.org/plugins/html-forms/">HTML Forms</a><br />
+                    A fast & flexible way to add a contact form to your site.
+
+                </li>
+                <li>
+                    <a href="https://wordpress.org/plugins/boxzilla/">Boxzilla Pop-Ups</a><br />
+                    Allows you to show pop-ups at just the right time.
+                </li>
+            </ul>
+
 		</div>
 
 		<div class="dvkss-box">
@@ -154,15 +168,6 @@ $networks = array(
 			<p><?php printf( __( 'Please use the %splugin support forums%s on WordPress.org.', 'dvk-social-sharing' ), '<a href="http://wordpress.org/support/plugin/dvk-social-sharing">', '</a>' ); ?></p>
 		</div>
 
-		<div class="dvkss-box">
-			<h3 class="dvkss-title">Other useful plugins</h3>
-			<ul class="ul-square">
-				<li><a href="https://wordpress.org/plugins/mailchimp-for-wp/">MailChimp for WordPress</a></li>
-				<li><a href="https://wordpress.org/plugins/boxzilla/">Boxzilla Pop-Ups</a></li>
-			</ul>
-			</div>
-
-		</div>
 		<!-- End dvkss Sidebar -->
 
 		<br style="clear:both; " />
