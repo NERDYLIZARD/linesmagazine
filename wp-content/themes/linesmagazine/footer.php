@@ -23,9 +23,8 @@
     </div>
 
     <div class="footer-meta-link">
-<!--      <a href="--><?php //echo get_page_link( get_page_by_title( PAGE_NAME )->ID ); ?><!--">About</a>-->
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact us</a>
+      <a href="<?php echo get_page_link( 138 ); ?>">About</a>
+      <a href="<?php echo get_page_link( 142 ); ?>">Contact us</a>
     </div>
     <p class="copyright">&copy <?php echo date('Y'); ?> All Rights Reserved.</p>
   </footer>
